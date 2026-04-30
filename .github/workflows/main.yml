@@ -1,0 +1,14 @@
+name: Streamlit Keep Alive
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Saatte bir çalışır
+  workflow_dispatch:
+
+jobs:
+  ping_app:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send HTTP Request
+        run: |
+          curl -I https://pediatricatopicdermatitis.streamlit.app/

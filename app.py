@@ -114,5 +114,5 @@ if st.button("🔍 Run Risk Analysis", use_container_width=True):
 # Sidebar
 st.sidebar.markdown("### 🔬 Model Specs")
 st.sidebar.write("**Threshold Applied:** 0.40")
-st.sidebar.write("**Max Age Allowed:** 36 Months")
+st.sidebar.write("**Model AUC:** 0.814")
 st.sidebar.caption("This tool is for decision support only.")

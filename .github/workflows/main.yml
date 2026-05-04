@@ -9,6 +9,7 @@ jobs:
   ping_app:
     runs-on: ubuntu-latest
     steps:
-      - name: Send HTTP Request
+      - name: Persistent Ping
         run: |
-          curl -I https://pediatricatopicdermatitis.streamlit.app/
+          # Sadece başlık değil, tüm içeriği çekmeye çalışarak sunucuyu zorlar
+          curl -L --retry 3 --retry-delay 5 https://pediatricatopicdermatitis.streamlit.app/

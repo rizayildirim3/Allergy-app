@@ -22,7 +22,7 @@ except Exception as e:
     st.stop()
 
 # 3. Header
-st.title("👶 Pediatric Food Allergy Risk Analysis")
+st.title("👶 Pediatric Food Sensitization Risk Analysis")
 st.markdown("Binary Classification System based on optimized **AdaBoost** model.")
 st.divider()
 
@@ -50,13 +50,13 @@ with col2:
 # Kullanıcı manuel olarak max_value'dan büyük bir değer yazarsa çalışmayı engeller.
 input_is_valid = True
 if age > MAX_AGE:
-    st.warning(f"⚠️ Uyarı: Yaş değeri en fazla {MAX_AGE} ay olabilir. Lütfen geçerli bir değer giriniz.")
+    st.warning(f"⚠️ Uyarı: The age value can be at most {MAX_AGE} months. Please enter a valid value.")
     input_is_valid = False
 
 # 5. Prediction Logic
 if st.button("🔍 Run Risk Analysis", use_container_width=True):
     if not input_is_valid:
-        st.error("Lütfen yukarıdaki hataları düzelttikten sonra tekrar deneyiniz.")
+        st.error("Please correct the errors above and try again.")
     else:
         # Analiz sadece veriler geçerliyse başlar
         input_data = {
@@ -103,10 +103,10 @@ if st.button("🔍 Run Risk Analysis", use_container_width=True):
             st.divider()
             if prob >= 0.40:
                 st.error(f"### 🚨 HIGH RISK ({prob_percent:.1f}%)")
-                st.markdown("**Recommendation:** Clinical findings suggest a high probability of food allergy.")
+                st.markdown("**Recommendation:** Clinical findings suggest a high probability of food sensitization.")
             else:
                 st.success(f"### ✅ LOW RISK ({prob_percent:.1f}%)")
-                st.markdown("**Recommendation:** Probability of food allergy is low.")
+                st.markdown("**Recommendation:** Probability of food sensitization is low.")
 
         except Exception as e:
             st.error(f"Prediction Error: {e}")
@@ -115,4 +115,4 @@ if st.button("🔍 Run Risk Analysis", use_container_width=True):
 st.sidebar.markdown("### 🔬 Model Specs")
 st.sidebar.write("**Threshold Applied:** 0.40")
 st.sidebar.write("**Model AUC:** 0.814")
-st.sidebar.caption("This tool is for decision support only.")
+st.sidebar.caption("This tool is for research purposes only and is not a substitute for professional medical diagnosis or treatment")

@@ -22,7 +22,7 @@ except Exception as e:
     st.stop()
 
 # 3. Header
-st.title("👶 Pediatric Food Sensitization Risk Analysis")
+st.title("👶 Food Sensitization Risk in Pediatric Atopic Dermatitis ")
 st.markdown("Binary Classification System based on optimized **AdaBoost** model.")
 st.divider()
 

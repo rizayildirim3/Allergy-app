@@ -40,7 +40,7 @@ with col1:
     eosinophils = st.number_input("Eozinofil Count (10^3/L)", min_value=0.0, value=0.4, format="%.2f")
 
 with col2:
-    breastfeeding_label = st.selectbox("Breastfeeding", options=["Yes", "No"])
+    breastfeeding_label = st.selectbox("Breastfeeding at the Time of Symptom Onset", options=["Yes", "No"])
     breastfeeding = 1 if breastfeeding_label == "Yes" else 0
 
     lpr = st.number_input("LPR (Lymphocyte/Platelet Ratio)", min_value=0.0, value=0.0200, format="%.4f")
